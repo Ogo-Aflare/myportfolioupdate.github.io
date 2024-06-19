@@ -4,10 +4,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
-    $phonenumber = htmlspecialchars($_POST['phonenumber']);
 
     // Define the recipient email and subject
-    $to = "ogooluwapeter@gmail.com";  // Replace with your email address
+    $to = "your-email@example.com";  // Replace with your email address
     $subject = "New Contact Form Submission";
 
     // Create the email headers
@@ -22,11 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "<p><strong>Message:</strong> {$message}</p>";
 
     // Send the email
-   // Send the email and redirect with status
     if (mail($to, $subject, $body, $headers)) {
-        header("Location: contact.html?status=success");
+        echo "Message sent successfully!";
     } else {
-        header("Location: contact.html?status=error");
+        echo "Failed to send the message.";
     }
 } else {
     echo "Invalid request.";
