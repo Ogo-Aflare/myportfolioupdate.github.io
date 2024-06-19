@@ -22,10 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "<p><strong>Message:</strong> {$message}</p>";
 
     // Send the email
+   // Send the email and redirect with status
     if (mail($to, $subject, $body, $headers)) {
-        echo "Message sent successfully!";
+        header("Location: contact.html?status=success");
     } else {
-        echo "Failed to send the message.";
+        header("Location: contact.html?status=error");
     }
 } else {
     echo "Invalid request.";
