@@ -93,9 +93,7 @@ section{
     margin: 1rem 0;
 }
 .home-content p{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.8;
+    font-size: 1.8rem;
 }
 .home-img img{
     width: 32vw;
@@ -360,3 +358,4 @@ section{
         flex-direction: column;
     }
 }
+
